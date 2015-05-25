@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   root to: 'welcome#index'
 
-  resources :clients
-  resources :users
+  resources :users do
+    resources :clients
+  end
+
+  resources :leads
+  resources :not_interested
 
   get 'sign-up', to: 'registrations#new'
   post 'sign-up', to: 'registrations#create'

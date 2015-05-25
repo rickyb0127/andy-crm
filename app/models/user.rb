@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  has_many :clients
   validates :email, uniqueness: true
 
   def full_name

@@ -1,6 +1,6 @@
 <h1>Form For New Client</h1>
 
-<%= form_for @client do |f| %>
+<%= form_for [@user, @client] do |f| %>
   <%= f.label :first_name %>
   <%= f.text_field :first_name %>
 </br>

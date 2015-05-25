@@ -5,12 +5,10 @@
 <% end %>
 
 <% if current_user %>
-  <%= link_to "Leads", clients_path %>
+  <%= link_to "Leads", leads_path %>
   </br>
   <%= link_to "Follow Up" %>
   </br>
-  <%= link_to "Info List" %>
-  </br>
-  <%= link_to "Not Interested" %>
+  <%= link_to "Not Interested", not_interested_index_path %>
   </br>
 <% end %>
