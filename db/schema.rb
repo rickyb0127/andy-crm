@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150524171315) do
+ActiveRecord::Schema.define(version: 20150531183059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "actions", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "clients", force: :cascade do |t|
     t.string   "first_name"
@@ -24,9 +31,12 @@ ActiveRecord::Schema.define(version: 20150524171315) do
     t.boolean  "is_home"
     t.boolean  "is_interested"
     t.string   "phone_number"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.integer  "user_id"
+    t.boolean  "has_referral"
+    t.boolean  "want_to_be_contacted"
+    t.string   "notes"
   end
 
   create_table "companies", force: :cascade do |t|

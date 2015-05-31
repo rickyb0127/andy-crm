@@ -5,9 +5,11 @@
 <% end %>
 
 <% if current_user %>
+  <%= link_to "Create New Lead", new_user_client_path(@user), class: "btn btn-primary" %>
+  </br>
   <%= link_to "Leads", leads_path %>
   </br>
-  <%= link_to "Follow Up" %>
+  <%= link_to "Follow Up", follow_ups_path %>
   </br>
   <%= link_to "Not Interested", not_interested_index_path %>
   </br>

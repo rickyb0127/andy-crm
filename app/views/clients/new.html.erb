@@ -1,26 +1,45 @@
 <h1>Form For New Client</h1>
 
 <%= form_for [@user, @client], url: user_clients_path do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-</br>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-</br>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-</br>
+<div class="form-group">
   <%= f.label :address %>
   <%= f.text_field :address %>
-</br>
-  <%= f.label :phone_number %>
+</div>
+<div class="form-group">
+  <%= f.label :first_name, "First Name" %>
+  <%= f.text_field :first_name %>
+</div>
+<div class="form-group">
+  <%= f.label :last_name, "Last Name" %>
+  <%= f.text_field :last_name %>
+</div>
+<div class="form-group">
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+</div>
+<div class="form-group">
+  <%= f.label :phone_number, "Phone Number" %>
   <%= f.text_field :phone_number %>
-</br>
-  <%= f.label :is_home %>
+</div>
+<div class="form-group">
+  <%= f.label :is_home, "Is Home" %>
   <%= f.check_box :is_home %>
-</br>
-  <%= f.label :is_interested %>
+</div>
+<div class="form-group">
+  <%= f.label :is_interested, "Is Interested" %>
   <%= f.check_box :is_interested %>
-</br>
-  <%= f.submit 'Add Client' %>
+</div>
+<div class="form-group">
+  <%= f.label :has_referral, "Has Referral" %>
+  <%= f.check_box :has_referral %>
+</div>
+<div class="form-group">
+  <%= f.label :want_to_be_contacted, "Wants To Be Contacted" %>
+  <%= f.check_box :want_to_be_contacted %>
+</div>
+<div class="form-group">
+  <%= f.label :notes %>
+  <%= f.text_area :notes %>
+</div>
+  <%= f.submit 'Add Client', class: "btn btn-primary" %>
 <% end %>

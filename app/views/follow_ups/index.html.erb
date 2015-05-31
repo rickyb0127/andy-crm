@@ -1,4 +1,6 @@
-<h1>Listing Leads</h1>
+<div class="page-header">
+  <h1><%= @user.full_name %>'s Action List</h1>
+</div>
 
 <table class="table">
 
@@ -8,7 +10,6 @@
     <th>Email</th>
     <th>Phone Number</th>
     <th>Address</th>
-    <th>Notes</th>
     <th>Follow Up Actions</th>
     <th>Edit</th>
   </thead>
@@ -21,14 +22,9 @@
       <td><%= client.email %></td>
       <td><%= client.phone_number %></td>
       <td><%= client.fill_street %></td>
-      <td><%= client.notes %></td>
-      <td><%= link_to "Follow Up Actions", follow_up_path(client) %></td>
+      <td><%= link_to "Add Follow Up Action", new_follow_up_path %></td>
       <td><%= link_to "Edit Client", edit_user_client_path(@user.id, client) %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
-
-</br>
-
-<%= link_to 'Create New Lead', new_user_client_path(@user) %>

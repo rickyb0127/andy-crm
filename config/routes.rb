@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :leads
   resources :not_interested
+  resources :follow_ups
 
   get 'sign-up', to: 'registrations#new'
   post 'sign-up', to: 'registrations#create'

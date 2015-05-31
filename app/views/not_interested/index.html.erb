@@ -1,6 +1,5 @@
 <h1>Not Interested</h1>
 
-<% @clients.each do |client| %>
 <table class="table">
 
   <thead>
@@ -10,16 +9,19 @@
     <th>Phone Number</th>
     <th>Address</th>
     <th>Edit</th>
+    <th>Notes</th>
   </thead>
 
   <tbody>
     <tr>
+    <% @clients.each do |client| %>
       <td><%= client.first_name %></td>
       <td><%= client.last_name %></td>
       <td><%= client.email %></td>
       <td><%= client.phone_number %></td>
       <td><%= client.address %></td>
       <td><%= link_to "Edit Client", edit_user_client_path(@user.id, client) %></td>
+      <td><%= client.notes %></td>
     </tr>
     <% end %>
   </tbody>
