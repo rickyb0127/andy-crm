@@ -20,14 +20,16 @@ class ClientsController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @client = Client.find(params[:id])
   end
 
   def update
+    @user = current_user
     @client = Client.find(params[:id])
-    if @client.save(client_params)
+    if @client.update(client_params)
       flash[:notice] = "Client updated"
-      redirect_to leads_path
+      redirect_to root_path
     else
       render :edit
     end
